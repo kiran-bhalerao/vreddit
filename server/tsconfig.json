@@ -1,0 +1,17 @@
+{
+  "ts-node": {
+    "files": true
+  },
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "commonjs",
+    "baseUrl": ".",
+    "outDir": "dist",
+    "strict": true,
+    "moduleResolution": "node",
+    "lib": ["es2018", "esnext.asynciterable"],
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  }
+}

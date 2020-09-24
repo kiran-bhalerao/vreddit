@@ -1,0 +1,52 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["transactionApi"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator typegraphql {
+  provider = "typegraphql-prisma"
+  output   = "../generated/type-graphql"
+}
+
+model Post {
+  id        Int      @default(autoincrement()) @id
+  title     String
+  createdAt DateTime @default(now())
+  content   String?
+  published Boolean  @default(false)
+  points    Int      @default(0)
+  authorId  Int
+  User      User     @relation(fields: [authorId], references: [id])
+  Vote      Vote[]
+}
+
+model Profile {
+  id     Int     @default(autoincrement()) @id
+  bio    String?
+  name   String?
+  userId Int     @unique
+  User   User    @relation(fields: [userId], references: [id])
+}
+
+model Vote {
+  id     Int  @default(autoincrement()) @id
+  value  Int
+  userId Int
+  User   User @relation(fields: [userId], references: [id])
+  postId Int
+  Post   Post @relation(fields: [postId], references: [id])
+}
+
+model User {
+  id       Int      @default(autoincrement()) @id
+  email    String   @unique
+  password String
+  posts    Post[]
+  profile  Profile?
+  Vote     Vote[]
+}

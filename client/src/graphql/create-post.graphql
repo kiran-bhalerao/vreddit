@@ -1,0 +1,5 @@
+mutation CreatePost($title: String!, $content: String!, $published: Boolean!) {
+  createPost(title: $title, content: $content, published: $published) {
+    ...PostFragment
+  }
+}

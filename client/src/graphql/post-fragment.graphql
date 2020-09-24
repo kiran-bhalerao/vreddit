@@ -1,0 +1,15 @@
+fragment PostFragment on Post {
+  id
+  title
+  content
+  published
+  points
+  voteValue
+  user: User {
+    id
+    email
+    profile {
+      name
+    }
+  }
+}

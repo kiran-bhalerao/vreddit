@@ -1,0 +1,61 @@
+{
+  "name": "reddit-server",
+  "version": "1.0.0",
+  "author": "kiran bhalerao",
+  "license": "ISC",
+  "description": "Reddit Clone Server",
+  "scripts": {
+    "dev": "env-cmd -f prisma/.env ts-node -r tsconfig-paths/register src/main.ts",
+    "build": "rm -rf dist && tsc",
+    "start": "env-cmd -f prisma/.env node dist/src/main.js",
+    "prisma:gen": "prisma generate",
+    "prisma:migrate": "npm run prisma:save && npm run prisma:up",
+    "prisma:save": "prisma migrate save --experimental",
+    "prisma:up": "prisma migrate up --experimental",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "@prisma/client": "^2.7.1",
+    "apollo-server-express": "^2.17.0",
+    "class-validator": "^0.12.2",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0",
+    "graphql-type-json": "^0.3.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.0.0"
+  },
+  "devDependencies": {
+    "@prisma/cli": "^2.7.1",
+    "@types/graphql-fields": "^1.3.3",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/lodash": "^4.14.161",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "graphql-fields": "^2.0.3",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "ts-node": "^9.0.0",
+    "ts-node-dev": "^1.0.0-pre.62",
+    "tsconfig-paths": "^3.9.0",
+    "typegraphql-prisma": "^0.6.1",
+    "typescript": "^4.0.2"
+  }
+}

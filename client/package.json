@@ -1,0 +1,101 @@
+{
+  "name": "reddit-client",
+  "version": "0.1.1",
+  "private": true,
+  "description": "Reddit Clone Client",
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "gen": "rm -rf ./src/generated && graphql-codegen --config codegen.yml"
+  },
+  "dependencies": {
+    "@chakra-ui/vue": "^0.6.2",
+    "@vue/apollo-composable": "^4.0.0-alpha.10",
+    "@vue/apollo-util": "^4.0.0-alpha.6",
+    "@vue/composition-api": "^1.0.0-beta.14",
+    "apollo-boost": "^0.4.9",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "apollo-link-context": "^1.0.20",
+    "apollo-link-error": "^1.1.13",
+    "apollo-link-http": "^1.5.17",
+    "core-js": "^3.6.5",
+    "emotion": "^10.0.27",
+    "graphql": "^15.3.0",
+    "vue": "^2.6.11",
+    "vue-fragment": "^1.5.1",
+    "vue-router": "^3.2.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "1.17.8",
+    "@graphql-codegen/fragment-matcher": "^1.17.8",
+    "@graphql-codegen/introspection": "1.17.8",
+    "@graphql-codegen/typescript": "1.17.8",
+    "@graphql-codegen/typescript-operations": "^1.17.8",
+    "@graphql-codegen/typescript-type-graphql": "^1.17.8",
+    "@graphql-codegen/typescript-vue-apollo": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "chakra-loader": "^1.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-graphql": "^4.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "graphql-tag": "^2.9.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "typescript": "~3.9.3",
+    "vue-cli-plugin-apollo": "~0.22.2",
+    "vue-cli-plugin-chakra-ui": "~1.0.3",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/base",
+      "plugin:vue/essential",
+      "@vue/standard",
+      "@vue/typescript/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "ecmaFeatures": {
+        "jsx": false
+      }
+    },
+    "plugins": [
+      "graphql"
+    ],
+    "rules": {
+      "@typescript-eslint/member-delimiter-style": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "space-before-function-paren": "off",
+      "eol-last": "off",
+      "curly": "off"
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "eslintIgnore": [
+    "coverage",
+    "/src/generated",
+    "node_modules"
+  ]
+}

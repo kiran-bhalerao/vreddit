@@ -1,0 +1,8 @@
+query Posts($id: Int, $take: Int!) {
+  posts(id: $id, take: $take) {
+    hasMore
+    posts {
+      ...PostFragment
+    }
+  }
+}

@@ -19,7 +19,7 @@
 
 ## Tech used:
 
-- [Vuejs](https://vuejs.org/v2/guide)
+- [Vuejs/composition-api](https://vuejs.org/v2/guide)
 - [Typescript](https://www.typescriptlang.org/docs)
 - [Nodejs](https://nodejs.org/en/docs)
 - [Apollo](https://www.apollographql.com/docs/)
